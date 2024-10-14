@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هنرستان رازی</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/output.css">
+    <link rel="stylesheet" href="styles/font.css">
+</head>
+
+<body>
+
+    <main class="min-h-screen flex-col bg-fixed flex justify-center items-center"
+        style="background: url('./images/background.jpg'); background-size: 100%;">
+        <div class="flex flex-col items-center relative">
+            <h1 class="text-white text-2xl font-bold mb-10">به برنامه مدیریت انضباطی هنرستان رازی خوش آمدید</h1>
+            <div class="w-full flex justify-between my-5">
+                <a class="bg-white rounded-xl py-3 px-5 hover:bg-green-100 mx-auto" href="#">ثبت غیبت کلاسی</a>
+                <!-- <a class="bg-white rounded-xl py-3 px-5 hover:bg-green-100 mx-auto" href="#">گزارش انضباطی دانش‌آموز</a> -->
+                <!-- <a class="bg-white rounded-xl py-3 px-5 hover:bg-green-100 mx-auto" href="#">ثبت غیبت کلاسی</a> -->
+            </div>
+            <div class="flex">
+                <input class="focus:outline-none bg-white p-3 rounded-r-full text-xl w-[600px]" name="student_id"
+                    placeholder="لطفا نام یا قسمتی از نام یا کدملی دانش‌آموز را وارد کنید..." />
+                <button
+                    class="bg-green-100 hover:bg-green-200 text-green-900 text-xl py-3 px-6 rounded-l-full">بررسی</button>
+            </div>
+            <div class="w-[600px] max-h-[400px] overflow-scroll py-6 px-3 bg-white absolute top-full rounded-b-2xl border border-green-800 flex flex-col">
+    
+                <a class="my-1 border border-gray-200 p-4 flex justify-between rounded-xl" href="/student.php?student_id=1">
+                    <strong class="ml-auto">نام و نام خانوادگی</strong>
+                    <p class="mr-auto">شماره کلاس </p>
+                </a>
+
+    
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

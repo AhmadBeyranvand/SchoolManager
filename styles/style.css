@@ -1,0 +1,6 @@
+body {
+    direction: rtl;
+}
+*{
+    transition: all 0.2s ease !important;
+}
