@@ -6,7 +6,7 @@ $theme = new IndexTheme();
 <div class="flex flex-col items-center relative py-8 md:px-8 px-2 backdrop-blur rounded-3xl">
     <h1 class="text-white text-2xl font-bold mb-5 text-center">به برنامه مدیریت انضباطی هنرستان رازی خوش آمدید</h1>
     <div class="w-full flex justify-between my-5">
-        <a class="bg-white rounded-xl py-3 px-5 hover:bg-green-100 mx-auto" href="#">ثبت غیبت کلاسی</a>
+        <a class="bg-white rounded-xl py-3 px-5 hover:bg-green-100 mx-auto" href="./classManager.php">ثبت غیبت کلاسی</a>
         <!-- <a class="bg-white rounded-xl py-3 px-5 hover:bg-green-100 mx-auto" href="#">گزارش انضباطی دانش‌آموز</a> -->
         <!-- <a class="bg-white rounded-xl py-3 px-5 hover:bg-green-100 mx-auto" href="#">ثبت غیبت کلاسی</a> -->
     </div>
@@ -28,10 +28,5 @@ $theme = new IndexTheme();
         </div>
     </div>
 </div>
-<footer class="fixed bottom-0 w-full p-4 backdrop-blur rounded-t-2xl text-green-200 justify-center md:flex hidden" style="box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);">
-    ساخته شده توسط
-    <a class="text-white mx-2" href="#">احمد بیرانوند</a>
-    در استودیو طراحی
-    <a class="text-white mx-2" href="#">هاویر وب</a>
-</footer>
+
 <?php $theme->foot(); ?>
