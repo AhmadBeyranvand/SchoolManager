@@ -16,7 +16,7 @@ $theme->head("مدیریت کلاس");
             <div>
                 <label for="">انتخاب کلاس:</label>
                 <select onchange="changeClass()" name="class_id" id="class_id" class="bg-white py-2 px-4 rounded-xl hover:bg-gray-100 cursor-pointer border border-gray-200">
-                    <option id="default_select_item" value="0" disabled>در حال بارگذاری...</option>
+                    <option id="default_select_item" value="0" selected disabled>در حال بارگذاری...</option>
                 </select>
             </div>
         </div>
@@ -286,15 +286,24 @@ $theme->head("مدیریت کلاس");
     var defaultSelectItem =document.getElementById("default_select_item")
     axios.get("/api/listOfClassRooms.php?with_empties=yes").then(res => {
         if (res.status == 200) {
-            defaultSelectItem.remove()
+            // defaultSelectItem.remove()
             res.data.map(item => {
                 data = res.data
                 var option = document.createElement("option")
                 option.text = item.title
                 option.value = item.id
+                <?php
+                if(isset($_GET["class_id"])) {
+                    ?>
                 if(option.value == <?= $_GET['class_id'] ?>){
                     option.selected = true
-                }
+                } <?php
+                    }else {
+                        ?>
+                        defaultSelectItem.innerHTML = "لطفا یک کلاس را انتخاب کنید"
+                        <?php
+                    }
+                ?>
                 classIDSelect.add(option)
             })
         }
@@ -303,7 +312,7 @@ $theme->head("مدیریت کلاس");
     })
 
     var changeClass = ()=>{
-        window.location.href = "/classManager.php?class_id="+classIDSelect.value+"&class_name="+data[classIDSelect.options.selectedIndex].title
+        window.location.href = "/classManager.php?class_id="+classIDSelect.value
     }
 </script>
 <?php $theme->foot(); ?>
