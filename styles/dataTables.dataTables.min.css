@@ -613,21 +613,21 @@ div.dt-container {
   position:relative;
   clear:both
 }
-div.dt-container .dt-search input {
+/* div.dt-container .dt-search input {
   border:1px solid #aaa;
   border-radius:3px;
   padding:5px;
   background-color:transparent;
   color:inherit;
   margin-left:3px
-}
-div.dt-container .dt-input {
+} */
+/* div.dt-container .dt-input {
   border:1px solid #aaa;
   border-radius:3px;
   padding:5px;
   background-color:transparent;
   color:inherit
-}
+} */
 div.dt-container select.dt-input {
   padding:4px
 }
@@ -647,15 +647,10 @@ div.dt-container .dt-paging .dt-paging-button {
 }
 div.dt-container .dt-paging .dt-paging-button.current,
 div.dt-container .dt-paging .dt-paging-button.current:hover {
-  color:inherit !important;
-  border:1px solid rgba(0, 0, 0, 0.3);
-  background-color:rgba(0, 0, 0, 0.05);
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(230, 230, 230, 0.05)), color-stop(100%, rgba(0, 0, 0, 0.05)));
-  background:-webkit-linear-gradient(top, rgba(230, 230, 230, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);
-  background:-moz-linear-gradient(top, rgba(230, 230, 230, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);
-  background:-ms-linear-gradient(top, rgba(230, 230, 230, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);
-  background:-o-linear-gradient(top, rgba(230, 230, 230, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%);
-  background:linear-gradient(to bottom, rgba(230, 230, 230, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%)
+  color:#134e4a !important;;
+  border:1px solid #e5e7eb;
+  background-color:white;
+  border-radius: 0.75rem;
 }
 div.dt-container .dt-paging .dt-paging-button.disabled,
 div.dt-container .dt-paging .dt-paging-button.disabled:hover,
@@ -668,14 +663,9 @@ div.dt-container .dt-paging .dt-paging-button.disabled:active {
 }
 div.dt-container .dt-paging .dt-paging-button:hover {
   color:white !important;
-  border:1px solid #111;
-  background-color:#111;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #585858), color-stop(100%, #111));
-  background:-webkit-linear-gradient(top, #585858 0%, #111 100%);
-  background:-moz-linear-gradient(top, #585858 0%, #111 100%);
-  background:-ms-linear-gradient(top, #585858 0%, #111 100%);
-  background:-o-linear-gradient(top, #585858 0%, #111 100%);
-  background:linear-gradient(to bottom, #585858 0%, #111 100%)
+  border:1px solid #e5e7eb;
+  background: #134e4a;
+  border-radius: 0.75rem;
 }
 div.dt-container .dt-paging .dt-paging-button:active {
   outline:none;

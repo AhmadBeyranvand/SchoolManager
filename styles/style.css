@@ -27,3 +27,14 @@ body {
 .content-box {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+.dt-container {
+    width: 90%;
+}
+/* bg-white py-2 px-4 rounded-xl hover:bg-gray-100 cursor-pointer border border-gray-200 */
+input , select {
+    background: white;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.75rem;
+    border: solid 1px #e5e7eb;
+    color: #134e4a !important;
+}

@@ -32,8 +32,10 @@ $theme->head("مدیریت کلاس");
                 </div>
                 <!-- <a href="">چاپ گزارش امروز</a> -->
             </div>
-            <div class="w-full p-2">
-                <!-- <table class="table bg-white rounded-xl w-full">
+            <div class="w-full p-2 flex justify-center items-center">
+                <?php
+                if(isset($_GET["class_id"])) {?>
+                <table class="table bg-white rounded-xl w-full mx-0">
                     <thead>
                         <tr>
                             <th class="text-center">شناسه</th>
@@ -274,7 +276,16 @@ $theme->head("مدیریت کلاس");
                             </td>
                         </tr>
                     </tbody>
-                </table> -->
+                </table>
+                <?php } else{
+                    ?>
+                <div class="no-classroom text-white">
+                    <img src="/images/404.png" class="max-w-[400px]" />
+                    <h3 class="my-3 text-xl text-center">هیچ کلاسی تعریف نشده است</h3>
+                </div>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>
