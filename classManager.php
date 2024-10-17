@@ -15,21 +15,17 @@ $theme->head("مدیریت کلاس");
             </h2>
             <div>
                 <label for="">انتخاب کلاس:</label>
-                <select name="class_id" id="" class="bg-white py-2 px-4 rounded-xl hover:bg-gray-100 cursor-pointer border border-gray-200">
-                    <optgroup label="دهم">
-                        <option>دهم مکانیک</option>
-                        <option>دهم مکانیک</option>
-                        <option>دهم مکانیک</option>
-                    </optgroup>
+                <select onchange="changeClass()" name="class_id" id="class_id" class="bg-white py-2 px-4 rounded-xl hover:bg-gray-100 cursor-pointer border border-gray-200">
+                    <option id="default_select_item" value="0" disabled>در حال بارگذاری...</option>
                 </select>
             </div>
         </div>
         <div class="flex min-h-[80vh]">
             <div class="flex flex-col p-3 min-h-full bg-white bg-opacity-50 min-h-[80vh] backdrop-blur  text-teal-900">
                 <a href="" class="bg-white hover:bg-teal-100 p-4 flex rounded-xl my-2 text-center justify-center flex">چاپ گزارش امروز</a>
-                
+
                 <div class="bg-white bg-opacity-50 flex flex-col rounded-xl overflow-hidden">
-                    <input class="fa-date p-2 text-center"/>
+                    <input class="fa-date p-2 text-center" />
                     <a href="" class="p-2 text-center hover:bg-teal-100">
                         دریافت گزارش روز
                     </a>
@@ -284,4 +280,30 @@ $theme->head("مدیریت کلاس");
     </div>
 </div>
 
+<script>
+    var data = []
+    var classIDSelect = document.getElementsByTagName("select")[0]
+    var defaultSelectItem =document.getElementById("default_select_item")
+    axios.get("/api/listOfClassRooms.php?with_empties=yes").then(res => {
+        if (res.status == 200) {
+            defaultSelectItem.remove()
+            res.data.map(item => {
+                data = res.data
+                var option = document.createElement("option")
+                option.text = item.title
+                option.value = item.id
+                if(option.value == <?= $_GET['class_id'] ?>){
+                    option.selected = true
+                }
+                classIDSelect.add(option)
+            })
+        }
+    }).catch(err=>{
+        defaultSelectItem.innerHTML = "خطا در هنگام بارگیری"
+    })
+
+    var changeClass = ()=>{
+        window.location.href = "/classManager.php?class_id="+classIDSelect.value+"&class_name="+data[classIDSelect.options.selectedIndex].title
+    }
+</script>
 <?php $theme->foot(); ?>

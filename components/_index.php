@@ -20,6 +20,7 @@ class IndexTheme
             <script src="/js/persian-date.min.js"></script>
             <script src="/js/persian-datepicker.js"></script>
             <script src="/js/dataTables.min.js"></script>
+            <script src="/js/axios.js"></script>
         </head>
 
         <body>

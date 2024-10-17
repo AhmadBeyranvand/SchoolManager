@@ -17,3 +17,10 @@ function runQuery($query)
     }
     return false;
 }
+
+function returnJson($data){
+    header("Content-Type:application/json");
+    $json = json_encode($data);
+    echo $json;
+
+}
