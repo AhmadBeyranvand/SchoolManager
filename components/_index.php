@@ -32,7 +32,7 @@ class IndexTheme
         function foot()
         {
             ?>
-                <footer class="fixed bottom-0 w-full p-4 backdrop-blur rounded-t-2xl text-green-200 justify-center md:flex hidden" style="box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);">
+                <footer class="fixed z-0 bottom-0 bg-black bg-opacity-50 w-full p-4 backdrop-blur rounded-t-2xl text-green-200 justify-center md:flex hidden" style="box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);">
                     ساخته شده توسط
                     <a class="text-white mx-2" href="#">احمد بیرانوند</a>
                     در استودیو طراحی

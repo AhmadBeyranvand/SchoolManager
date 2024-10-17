@@ -4,3 +4,26 @@ body {
 *{
     transition: all 0.2s ease !important;
 }
+
+.dt-layout-start,
+.dt-layout-end{
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    /* width: 100%; */
+}
+.dt-layout-end{
+    margin-left: 0;
+    margin-right: auto;
+}
+.dt-layout-start{
+    margin-right: 0;
+    margin-left: auto;
+}
+.dt-orderable-asc {
+    text-align: right;
+}
+.content-box {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
