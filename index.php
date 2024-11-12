@@ -17,7 +17,7 @@ $theme = new IndexTheme();
             class="bg-green-100 hover:bg-green-200 text-green-900 text-xl py-3 px-6 rounded-l-full">بررسی</button>
     </div>
     <div style="top: calc(100% - 2rem);" class=" absolute w-full md:px-8 px-2">
-        <div class="md:w-[600px] mx-auto w-full max-h-[400px] overflow-scroll py-6 px-3 mt-0 bg-white md:rounded-t-none rounded-2xl border border-gray-400 flex flex-col">
+        <div id="searchResults" class="md:w-[600px] mx-auto w-full max-h-[400px] overflow-scroll py-6 px-3 mt-0 bg-white md:rounded-t-none rounded-2xl border border-gray-400 flex flex-col">
 
             <a class="my-1 border border-gray-200 p-4 flex justify-between rounded-xl hover:bg-gray-200" href="/student.php?student_id=1">
                 <strong class="ml-auto">نام و نام خانوادگی</strong>
@@ -28,5 +28,29 @@ $theme = new IndexTheme();
         </div>
     </div>
 </div>
+<script>
+    var container = document.getElementById("searchResults")
+    axios.get("/api/listOfAllStudents.php").then(res=>{
+        res.data.map(item=>{
+            var strongTag = document.createElement("strong")
+            strongTag.classList.add("ml-auto")
+            strongTag.innerHTML = item.fullName	
+            var pFatherTag = document.createElement("p")
+            pFatherTag.classList.add("mx-auto");
+            pFatherTag.innerHTML = item.fatherName	
+            var pClassTag = document.createElement("p")
+            pClassTag.classList.add("mr-auto")
+            pClassTag.innerHTML = item.classID	
+            var aTag = document.createElement("a")
+            aTag.classList.add("my-1", "border", "border-gray-200", "p-4", "flex", "justify-between", "rounded-xl", "hover:bg-gray-200");
+            aTag.href = "/student.php?id="
+            aTag.appendChild(strongTag)
+            aTag.appendChild(pFatherTag)
+            aTag.appendChild(pClassTag)
+            container.appendChild(aTag)
+
+        })
+    })
+</script>
 
 <?php $theme->foot(); ?>
