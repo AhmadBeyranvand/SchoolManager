@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.13"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i styles/input.css -o styles/output.css --watch",
+    "server": "sudo php -S 127.0.0.1:800 -t ."
   }
 }
